@@ -44,7 +44,7 @@ class Ultimate_board():
         self.p_two = p_two
         self.winner = None
 
-    def print_board(self):
+    def display_board(self):
         string = "+---------------+---------------+---------------+\n"
         for row in range(0,3):
             for board_row in range(0,3):
@@ -61,6 +61,19 @@ class Ultimate_board():
                 else:
                     string += "\n+---------------+---------------+---------------+\n"
 
+        print(string)
+
+    def display_wins(self):
+        string = "+---+---+---+\n"
+        for row in range(0, 3):
+            string += "|"
+            for col in range(0, 3):
+                if self.board[row][col].winner:
+                    string += " " + self.board[row][col].winner
+                else:
+                    string += " -"
+                string += " |"
+            string += "\n+---+---+---+\n"
         print(string)
 
     def check_diagonals(self, row, col):
@@ -125,9 +138,8 @@ class Ultimate_board():
             else:
               p_one_play = True
             play_made = False
-            self.print_board()
-
-
+            self.display_board()
+            self.display_wins()
 
 
 def main():
