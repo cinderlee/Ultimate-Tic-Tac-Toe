@@ -1,41 +1,84 @@
 import React, { useState } from 'react';
 import TicTacToe from './TicTacToe';
+import { isWinner, isBoardFilled } from '../utils/boardChecker';
 
-const Board = () => {
+const Board = ({
+  playerOne, 
+  playerTwo,
+  onGameOver,
+  setWinner
+}) => {
   const [board, setBoard] = useState([[null, null, null], [null, null, null], [null, null, null]]);
-  const [player, setPlayer] = useState('X');
+  const [currPlayer, setCurrPlayer] = useState(playerOne);
+  const [currBoard, setCurrBoard] = useState(null);
 
   const onSelectCell = () => {
-    if (player === 'X') {
-      setPlayer('O');
-    }
-    else {
-      setPlayer('X');
-    }
+    currPlayer === playerOne ? setCurrPlayer(playerTwo) : setCurrPlayer(playerOne);
   }
 
   const setBoardWinner = (row, col) => {
     const copy = [[...board[0]], [...board[1]], [...board[2]]];
-    console.log(copy)
-    copy[row][col] = player;
+    copy[row][col] = currPlayer;
+    setBoard(copy);
+    if (isWinner(board, currPlayer, row, col)){
+      setWinner(currPlayer);
+    }
+    if (isWinner(board, currPlayer, row, col) || isBoardFilled(board, row, col)) {
+      onGameOver();
+      return;
+    }
+  }
+
+  const setTie = (row, col) => {
+    const copy = [[...board[0]], [...board[1]], [...board[2]]];
+    copy[row][col] = "TIE";
     setBoard(copy);
   }
 
-  return (
-    // board.map((row, rowNum) => (
-    //   <div>
-    //     {row.map((cell, colNum) => <TicTacToe className={`board row-0 col-0`}/>)}
-    //   </div>
-    // ))
+  const setNextLocation = (row, col) => {
+    if (board[row][col] === null) {
+      setCurrBoard([row, col]);
+    }
+    else {
+      setCurrBoard(null);
+    }
+  }
 
+  const isLocked = (row, col) => {
+    if (currBoard === null) {
+      return false;
+    }
+    if (currBoard[0] === row && currBoard[1] === col) {
+      return false;
+    }
+    return true;
+  }
+
+  const shouldHighlightCell = (row, col) => {
+    return !isLocked(row, col) && board[row][col] === null;
+  }
+
+  return (
     <div className="ultimate-board">
     {board.map((row, rowNum) => (
-      <div className="row">
+      <div key={`${rowNum}`} className="row">
       <>
         {row.map((cell, colNum) => (
-          <div className={`board-cell row-${rowNum} col-${colNum}`}>
-            <TicTacToe player={player} onSelectCell={onSelectCell} setWinner={() => setBoardWinner(rowNum, colNum)} winner={board[rowNum][colNum]} />
+          <>
+          <div key={`${rowNum * 3 + colNum}`} className={`board-cell row-${rowNum} col-${colNum} ${shouldHighlightCell(rowNum, colNum) ? 'highlighted' : null}`}>
+            <TicTacToe 
+              player={currPlayer} 
+              onSelectCell={onSelectCell} 
+              setWinner={() => setBoardWinner(rowNum, colNum)} 
+              winner={cell} 
+              setTie={() => setTie(rowNum, colNum)} 
+              isTie={cell === "TIE"}
+              isLocked={isLocked(rowNum, colNum)}
+              setNextLocation={setNextLocation}
+              key={`${rowNum * 3 + colNum}`}
+            />
           </div>
+          </>
         ))}
         </>
       </div>
