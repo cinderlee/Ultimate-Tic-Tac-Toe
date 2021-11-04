@@ -5,6 +5,14 @@
   vertical-align: middle;
   display: table-cell;
 }
+
+.x-cell{
+  color: rgb(200, 177, 253);
+}
+
+.o-cell {
+  color: rgb(126, 242, 255);
+}
   
 .row {
   width: fit-content;
@@ -50,6 +58,10 @@
   opacity: 0.5;
 }
 
-.highlighted {
-  border: 3px solid rgb(79, 170, 255) !important;
+.highlighted-X {
+  border: 3px solid rgb(200, 177, 253) !important; 
+}
+
+.highlighted-O {
+  border: 3px solid rgb(126, 242, 255) !important;
 }

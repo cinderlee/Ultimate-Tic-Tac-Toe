@@ -17,13 +17,13 @@ const Board = ({
   }
 
   const setBoardWinner = (row, col) => {
-    const copy = [[...board[0]], [...board[1]], [...board[2]]];
-    copy[row][col] = currPlayer;
-    setBoard(copy);
-    if (isWinner(board, currPlayer, row, col)){
+    const newBoard = board.map(row => [...row]);
+    newBoard[row][col] = currPlayer;
+    setBoard(newBoard);
+    if (isWinner(newBoard, currPlayer, row, col)){
       setWinner(currPlayer);
     }
-    if (isWinner(board, currPlayer, row, col) || isBoardFilled(board, row, col)) {
+    if (isWinner(newBoard, currPlayer, row, col) || isBoardFilled(newBoard, row, col)) {
       onGameOver();
       return;
     }
@@ -65,7 +65,7 @@ const Board = ({
       <>
         {row.map((cell, colNum) => (
           <>
-          <div key={`${rowNum * 3 + colNum}`} className={`board-cell row-${rowNum} col-${colNum} ${shouldHighlightCell(rowNum, colNum) ? 'highlighted' : null}`}>
+          <div key={`${rowNum * 3 + colNum}`} className={`board-cell row-${rowNum} col-${colNum} ${shouldHighlightCell(rowNum, colNum) ? `highlighted-${currPlayer}` : null}`}>
             <TicTacToe 
               player={currPlayer} 
               onSelectCell={onSelectCell} 

@@ -8,9 +8,9 @@ const TicTacToe = ({player, winner, setWinner, onSelectCell, setTie, isTie, isLo
 
   const onClickCell = (row, col) => {
     if (!isLocked && !board[row][col]) {
-      const copy = [[...board[0]], [...board[1]], [...board[2]]];
-      copy[row][col] = player;
-      setBoard(copy);
+      const newBoard = board.map(row => [...row]);;
+      newBoard[row][col] = player;
+      setBoard(newBoard);
       onSelectCell();
       if (isWinner(board, player, row, col)) {
         setWinner();

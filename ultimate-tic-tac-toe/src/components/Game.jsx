@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PlayerSelector from './PlayerSelector';
+import PlayerSelection from './PlayerSelection';
 import Board from './Board';
 import GameOver from './GameOver';
 
@@ -22,15 +22,17 @@ const Game = () => {
   }
 
   const onGameStart = () => {
-    setIsSelectingPlayer(false);
+    if (playerOne && playerTwo) {
+      setIsSelectingPlayer(false);
+    }
   }
 
   return (
     <>
-    {isSelectingPlayer && <PlayerSelector 
+    {isSelectingPlayer && <PlayerSelection
       playerOne={playerOne}
       playerTwo={playerTwo}
-      onSelectPlayer={onSelectPlayer}
+      onSelectPlayerCard={onSelectPlayer}
       onGameStart={onGameStart}
     />}
     {!isSelectingPlayer && <Board playerOne={playerOne} playerTwo={playerTwo} setWinner={setWinner} onGameOver={() => setIsGameOver(true)} />}

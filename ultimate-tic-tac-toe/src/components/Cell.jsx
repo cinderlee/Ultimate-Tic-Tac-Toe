@@ -4,10 +4,13 @@ const Cell = ({
 	className,
   value,
 	onClick
-}) => (
-  <div className={className} onClick={onClick}>
-    {value}
-  </div>
-)
+}) => {
+	const colorClassName = value === 'X' ? 'x-cell' : value === 'O' ? 'o-cell' : null;
+	return (
+		<div className={`${className} ${colorClassName}` } onClick={onClick}>
+			{value}
+		</div>
+	);
+}
 
 export default Cell;

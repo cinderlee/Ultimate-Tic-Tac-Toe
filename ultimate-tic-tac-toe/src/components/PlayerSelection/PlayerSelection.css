@@ -22,7 +22,7 @@
    display: inline-block;
 }
 
-.second-player {
+.player-two {
    margin-left: 25px;
 }
 
@@ -34,8 +34,12 @@
    margin-left: 10px;
 }
 
-.selected {
-   border: 3px solid #7897ff;
+.x-selected {
+   border: 5px solid rgb(200, 177, 253);
+}
+
+.o-selected {
+   border: 5px solid rgb(126, 242, 255);
 }
 
 .game-start {
@@ -47,5 +51,8 @@
    width: 200px;
    height: 50px;
    border-radius: 5px;
-   background-color: rgb(134, 182, 255)
+   background-color: rgb(145, 255, 218);
+   font-family: 'Monda';
+   font-size: calc(5px + 2vmin);
+   border: 1px solid green;
 }
