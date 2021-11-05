@@ -1,6 +1,8 @@
 import React from 'react';
+import classnames from 'classnames';
 import PlayerInformation from './PlayerInformation';
-import './PlayerSelection.css';
+// import './PlayerSelection.css';
+import styles from './PlayerSelection.module.css';
 
 const PlayerSelection = ({
   playerOne,
@@ -10,30 +12,34 @@ const PlayerSelection = ({
 }) => {
   return (
     <>
-    <div>
-      <h2>Welcome to Ultimate Tic-Tac-Toe</h2>
-      Please select your character.
-    </div>
-    <br />
-    <div className="player-container"> 
-      <PlayerInformation
-        title="Player One"
-        isPlayerOne={true}
-        selectedCard={playerOne}
-        onSelectXCard={() => onSelectPlayerCard('one', 'X')}
-        onSelectOCard={() => onSelectPlayerCard('one', 'O')}
-      />
-      <div className="player-info bar"></div>
-      <PlayerInformation
-        title="Player Two"
-        isPlayerOne={false}
-        selectedCard={playerTwo}
-        onSelectXCard={() => onSelectPlayerCard('two', 'X')}
-        onSelectOCard={() => onSelectPlayerCard('two', 'O')}
-      />
-    </div>
+      <div>
+        <h2>Welcome to Ultimate Tic-Tac-Toe</h2>
+        Please select your character.
+      </div>
+      <br />
+      <div className={styles.playerContainer}> 
+        <PlayerInformation
+          title="Player One"
+          className={styles.playerInfo}
+          isPlayerOne={true}
+          selectedCard={playerOne}
+          onSelectXCard={() => onSelectPlayerCard('one', 'X')}
+          onSelectOCard={() => onSelectPlayerCard('one', 'O')}
+        />
+        <div className={classnames(styles.playerInfo, styles.bar)}></div>
+        <PlayerInformation
+          title="Player Two"
+          className={styles.playerInfo}
+          isPlayerOne={false}
+          selectedCard={playerTwo}
+          onSelectXCard={() => onSelectPlayerCard('two', 'X')}
+          onSelectOCard={() => onSelectPlayerCard('two', 'O')}
+        />
+      </div>
 
-    <div className="game-start"><button className="game-start-button" onClick={onGameStart}>Start Game</button></div>
+      <div className={styles.gameStart}>
+        <button className={styles.gameStartButton} onClick={onGameStart}>Start Game</button>
+      </div>
     </>
   )
 }

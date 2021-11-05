@@ -1,24 +1,29 @@
 import React from 'react';
+import classnames from 'classnames';
 import PlayerCard from './PlayerCard';
+import styles from './PlayerInformation.module.css';
 
 const PlayerInformation = ({
   title,
+  className,
   isPlayerOne,
   selectedCard,
   onSelectXCard,
   onSelectOCard
 }) => (
-  <div className={`player-info ${isPlayerOne ? 'player-one' : 'player-two'}`}>
+  <div className={classnames(className, {
+    [styles.playerTwo]: !isPlayerOne
+  })}>
     <div>{title}</div>
     <br />
     <PlayerCard 
       value="X"
-      className={selectedCard === 'X' ? 'x-selected' : null}
+      className={classnames({ [styles.xSelected]: selectedCard === 'X' })}
       onClick={onSelectXCard}
     />
     <PlayerCard 
       value="O"
-      className={`second-card ${selectedCard === 'O' ? 'o-selected' : null}`}
+      className={classnames(styles.secondCard, { [styles.oSelected]: selectedCard === 'O' })}
       onClick={onSelectOCard}
     />
   </div>

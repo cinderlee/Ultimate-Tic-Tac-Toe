@@ -1,4 +1,4 @@
-.game-over-container {
+.gameOverContainer {
   background-color: white;
   color: black;
   width: 300px;
@@ -6,8 +6,8 @@
   position: absolute;
 }
 
-.game-over-message {
+.gameOverMessage {
   position: relative;
-  top: 15px;
+  top: 10px;
 }
 

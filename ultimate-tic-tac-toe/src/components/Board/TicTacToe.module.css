@@ -1,3 +1,8 @@
+.row {
+  width: fit-content;
+  height: fit-content;
+}
+
 .cell {
   width: 50px;
   height: 50px;
@@ -6,34 +11,6 @@
   display: table-cell;
 }
 
-.x-cell{
-  color: rgb(200, 177, 253);
-}
-
-.o-cell {
-  color: rgb(126, 242, 255);
-}
-  
-.row {
-  width: fit-content;
-  height: fit-content;
-}
-
-.row-0 {
-  border-top-width: 0px !important;
-}
-
-.row-2 {
-  border-bottom-width: 0px !important;
-}
-
-.col-0 {
-  border-left-width: 0px !important;
-}
-
-.col-2 {
-  border-right-width: 0px !important;
-}
 
 .board-cell {
   display: table-cell;

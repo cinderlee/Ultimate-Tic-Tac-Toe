@@ -27,7 +27,8 @@ const countOtherDiagonal = (board, player, row, col) => {
   return countInDirection(board, player, col + 1, row - 1, 1, -1) + countInDirection(board, player, col - 1, row + 1, -1, 1);
 }
 
-const isWinner = (board, player, row, col) => {
+const isWinner = (board, row, col) => {
+  const player = board[row][col];
   return countVertical(board, player, row, col) === 2 || 
     countHorizontal(board, player, row, col) === 2 || 
     countDiagonal(board, player, row, col) === 2 || 

@@ -1,0 +1,21 @@
+.row {
+  width: fit-content;
+  height: fit-content;
+}
+
+.boardCell {
+  display: table-cell;
+  width: 200px;
+  height: 200px;
+  border: 1px solid white;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+.currentPlayerX {
+  border: 3px solid rgb(200, 177, 253) !important; 
+}
+
+.currentPlayerO {
+  border: 3px solid rgb(126, 242, 255) !important;
+}

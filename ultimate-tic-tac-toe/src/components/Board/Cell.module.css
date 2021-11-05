@@ -1,0 +1,23 @@
+.xCell{
+  color: rgb(200, 177, 253);
+}
+
+.oCell {
+  color: rgb(126, 242, 255);
+}
+
+.firstRow{
+  border-top-width: 0px !important;
+}
+
+.lastRow {
+  border-bottom-width: 0px !important;
+}
+
+.firstColumn {
+  border-left-width: 0px !important;
+}
+
+.lastColumn {
+  border-right-width: 0px !important;
+}

@@ -1,0 +1,15 @@
+.playerTwo {
+  margin-left: 25px;
+}
+
+.secondCard {
+  margin-left: 10px;
+}
+
+.xSelected {
+  border: 5px solid rgb(200, 177, 253);
+}
+
+.oSelected {
+  border: 5px solid rgb(126, 242, 255);
+}

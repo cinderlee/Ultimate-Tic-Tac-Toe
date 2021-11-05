@@ -1,5 +1,5 @@
 import React from 'react';
-import './GameOver.css';
+import styles from './GameOver.module.css';
 
 const GameOver = ({
   winner
@@ -7,14 +7,14 @@ const GameOver = ({
   const message = winner ? `Congratulations, ${winner} won!` : 'It\'s a tie!';
 
   return (
-    <div className="game-over-container">
-      <div className="game-over-message">
+    <div className={styles.gameOverContainer}>
+      <div className={styles.gameOverMessage}>
         Game Over
         <br />
         {message}
       </div>
     </div>
-  )
+  );
 }
 
 export default GameOver;
