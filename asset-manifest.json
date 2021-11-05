@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Ultimate-Tic-Tac-Toe/static/css/main.507c5122.chunk.css",
+    "main.js": "/Ultimate-Tic-Tac-Toe/static/js/main.d6a64f87.chunk.js",
+    "main.js.map": "/Ultimate-Tic-Tac-Toe/static/js/main.d6a64f87.chunk.js.map",
+    "runtime-main.js": "/Ultimate-Tic-Tac-Toe/static/js/runtime-main.32b65cfe.js",
+    "runtime-main.js.map": "/Ultimate-Tic-Tac-Toe/static/js/runtime-main.32b65cfe.js.map",
+    "static/js/2.4317940b.chunk.js": "/Ultimate-Tic-Tac-Toe/static/js/2.4317940b.chunk.js",
+    "static/js/2.4317940b.chunk.js.map": "/Ultimate-Tic-Tac-Toe/static/js/2.4317940b.chunk.js.map",
+    "static/js/3.bf1c24eb.chunk.js": "/Ultimate-Tic-Tac-Toe/static/js/3.bf1c24eb.chunk.js",
+    "static/js/3.bf1c24eb.chunk.js.map": "/Ultimate-Tic-Tac-Toe/static/js/3.bf1c24eb.chunk.js.map",
+    "index.html": "/Ultimate-Tic-Tac-Toe/index.html",
+    "static/css/main.507c5122.chunk.css.map": "/Ultimate-Tic-Tac-Toe/static/css/main.507c5122.chunk.css.map",
+    "static/js/2.4317940b.chunk.js.LICENSE.txt": "/Ultimate-Tic-Tac-Toe/static/js/2.4317940b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.32b65cfe.js",
+    "static/js/2.4317940b.chunk.js",
+    "static/css/main.507c5122.chunk.css",
+    "static/js/main.d6a64f87.chunk.js"
+  ]
+}
