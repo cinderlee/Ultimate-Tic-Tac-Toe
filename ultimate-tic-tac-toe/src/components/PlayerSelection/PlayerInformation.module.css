@@ -13,3 +13,9 @@
 .oSelected {
   border: 5px solid rgb(126, 242, 255);
 }
+
+@media (max-width: 750px) {
+  .playerTwo {
+    margin: 0;
+  }
+}

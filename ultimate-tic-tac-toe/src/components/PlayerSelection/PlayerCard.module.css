@@ -1,11 +1,18 @@
 .card {
-  width: 150px;
-  height: 200px;
+  --card-height: 200px;
+  width: calc(var(--card-height) * 0.75);
+  height: var(--card-height);
   border-radius: 10px;
   border: 1px solid white;
-  vertical-align:middle;
-  font-size:50px;
-  line-height:200px;
+  vertical-align: middle;
+  font-size: calc(var(--card-height) * 0.25);
+  line-height: var(--card-height);
   display:inline-block;
   box-sizing: border-box;
+}
+
+@media (max-width: 750px) {
+  .card {
+    --card-height: 150px;
+  }
 }

@@ -15,8 +15,8 @@
 }
 
 .gameStart {
-  position: relative;
-  top: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
  
 .gameStartButton {
@@ -27,4 +27,23 @@
   font-family: 'Monda';
   font-size: calc(5px + 2vmin);
   border: 1px solid green;
+}
+
+@media (max-width: 750px) {
+  .bar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    width: 100%;
+    height: 5px;
+    position: relative;
+  }
+
+  .playerInfo {
+    display: block;
+  }
+
+  .playerContainer {
+    height: calc(100% + 20px)
+  }
 }
